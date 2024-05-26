@@ -1,0 +1,31 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    border: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-45deg,#7f379b,#ffa26c);
+}
+
+h1{
+    font-size: 2.5em;
+    border: 200px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn-enviar{
+    size: 200px;
+}

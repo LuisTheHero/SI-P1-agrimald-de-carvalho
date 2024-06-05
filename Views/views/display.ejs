@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stye.css">
+    <title>verDepoimentos</title>
+</head>
+<body>
+    <header>
+        <div class="interface"> 
+            <div class="logo">
+                <a href="../Stye.css">
+                    <img src="../home/assets/logo.png" alt="GrimasLogo">
+                </a>
+            </div><!--Logo-->
+
+            <nav class="menu">
+                <ul>
+                    <li><a class="inicio" href="../home/index.html">Início</a></li>
+                    <li><a href="../home/especialidades.html">Especialidade</a></li>
+                    <li><a href="../home/sobre.html">Sobre</a></li>
+                    <li><a href="../home/projectos.html">Projectos</a></li>
+                </ul>
+            </nav><!--Secções do meio-->
+
+            <div class="btn-contacto">
+                <a href="../home/contacto.html">
+                    <button>Contacto</button>
+                </a>
+            </div>
+        </div>
+    </header><!--barrra de cima-->
+
+<main>
+        <section class="sobre">
+            <div class="interface">
+                <div class="flex">
+                    <div class="img-sobre">
+                        <img src="../home/assets/dp2.png" alt="Depoimento">
+                    </div>
+                    <div class="txt-sobre">
+                        <h2>Deixe o seu <span>Depoimento.</span></h2>
+                        <p> se tiver algo a deportar sobre a sua experiência conosco.</p>
+                        <form action="/depoimento" method="post">
+                            <input type="text" placeholder="Apelido" name="name">
+                            <input type="text" placeholder="depoimento" name="depoimento">
+                            <input type="submit" placeholder="postar">
+                        </form>
+                    </div>
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--sobre-->
+    </main>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Depoi</th>
+            <th>update</th>
+            <th>delete</th>
+        </tr>
+    
+<% if(depoimentos.length > 0) { %>
+    <% for (var i = 0; i < depoimentos.length; i++) { %>
+        <tr>
+            <td> <%- depoimentos[i].id %> </td>
+            <td> <%- depoimentos[i].name %> </td>
+            <td> <%- depoimentos[i].depoi %> </td>
+            <td><button><a href="/update?id=<%- depoimentos[i].id %>" target="_blank">editar</a></button></a></td>
+            <td><button><a href="/delete?id=<%- depoimentos[i].id %>" target="_blank">Apagar</a></button></a></td>
+        </tr>
+    <% } %>
+<% } else { %>
+    <h1>Data Not Found!</h1>
+<% } %>
+    </table>
+</body>
+</html>

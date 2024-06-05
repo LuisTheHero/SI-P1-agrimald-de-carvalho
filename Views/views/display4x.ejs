@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stye.css">
+    <title>verPedidos de videoaula</title>
+</head>
+<body>
+    <header>
+        <div class="interface"> 
+            <div class="logo">
+                <a href="../Stye.css">
+                    <img src="../home/assets/logo.png" alt="GrimasLogo">
+                </a>
+            </div><!--Logo-->
+
+            <nav class="menu">
+                <ul>
+                    <li><a class="inicio" href="../home/index.html">Início</a></li>
+                    <li><a href="../home/especialidades.html">Especialidade</a></li>
+                    <li><a href="../home/sobre.html">Sobre</a></li>
+                    <li><a href="../home/projectos.html">Projectos</a></li>
+                </ul>
+            </nav><!--Secções do meio-->
+
+            <div class="btn-contacto">
+                <a href="../home/contacto.html">
+                    <button>Contacto</button>
+                </a>
+            </div>
+        </div>
+    </header><!--barrra de cima-->
+
+    <main>
+        <div><img src="../home/assets/hd2.png" alt=""></div>
+        <section class="Especialidades">    
+            <div class="interface">
+                <h2 class="titulo">Adicionar uma <span>VideoAula.</span></h2>
+                    <div class="flex">
+                        <img src="../home/assets/img.png" alt="learn">
+                        <div class="especialidades-box">
+                            <h2>Adicione uma video aula para ajudar os demais a desenvolver as suas <span> Especialidades.</span></h2>
+                            <p> </p>
+                            <form action="/videoaula" method="post">
+                                <input type="text" placeholder="Apelido" name="name">
+                                <input type="text" placeholder="videoaula" name="videoaula">
+                                <input type="submit" placeholder="postar">
+                            </form>  
+                        </div><!--Cards de especialidades-->
+                    </div><!--flex-->
+            </div><!--interface-->
+        </section><!--Especialidades-->
+    </main>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>videoaula</th>
+            <th>update</th>
+            <th>delete</th>
+        </tr>
+    
+<% if(videoaula.length > 0) { %>
+    <% for (var i = 0; i < videoaula.length; i++) { %>
+        <tr>
+            <td> <%- videoaula[i].id %> </td>
+            <td> <%- videoaula[i].name %> </td>
+            <td><button><a href="<%- videoaula[i].videoaula %>">link da videoAula</a></button> </td>
+            <td><button><a href="/update4x?id=<%- videoaula[i].id %>" target="_blank">editar</a></button></a></td>
+            <td><button><a href="/delete4x?id=<%- videoaula[i].id %>" target="_blank">Apagar</a></button></a></td>
+        </tr>
+    <% } %>
+<% } else { %>
+    <h1>Data Not Found!</h1>
+<% } %>
+    </table>
+</body>
+</html>
